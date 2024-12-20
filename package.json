@@ -1,0 +1,49 @@
+{
+  "name": "lexirank",
+  "version": "0.1.0",
+  "description": "Ranking system for ordered lists that leverages lexicographic ordering feature of strings.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "module": "./src/index.js",
+      "import": {
+        "default": "./src/index.js",
+        "types": "./types/index.d.ts"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "module": "./src/index.js",
+  "types": "./types/index.d.ts",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "tsc"
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/az33zy/lexirank.git"
+  },
+  "keywords": [
+    "lexicographic",
+    "ranking",
+    "lexorank",
+    "ordered lists",
+    "sorting"
+  ],
+  "author": "az33zy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/az33zy/lexirank/issues"
+  },
+  "homepage": "https://github.com/az33zy/lexirank#readme",
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "sideEffects": false
+}

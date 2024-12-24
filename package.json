@@ -1,6 +1,6 @@
 {
   "name": "lexirank",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Ranking system for ordered lists that leverages lexicographic ordering feature of strings.",
   "author": "az33zy",
   "license": "MIT",

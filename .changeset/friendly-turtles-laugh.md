@@ -1,5 +1,0 @@
----
-"lexirank": patch
----
-
-automate workflow

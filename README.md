@@ -35,14 +35,14 @@ bun add lexirank
 ## Usage
 
 ```js
-import { LexiRank, AsciiPrintableCharSet } from 'lexirank';
+import { LexiRank, AsciiPrintableCharSet } from "lexirank"
 
-const lexirank = new LexiRank(new AsciiPrintableCharSet());
+const lexirank = new LexiRank(new AsciiPrintableCharSet())
 
-const mid = lexirank.mid(); // "O"
-const beforeMid = lexirank.before(mid); // "8"
-const afterMid = lexirank.after(mid); // "f"
-const between = lexirank.between('A', 'C'); // "B"
+const mid = lexirank.mid() // "O"
+const beforeMid = lexirank.before(mid) // "8"
+const afterMid = lexirank.after(mid) // "f"
+const between = lexirank.between("A", "C") // "B"
 ```
 
 ## License

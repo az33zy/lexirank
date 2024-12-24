@@ -3,12 +3,12 @@ name: CI
 on:
   push:
     branches:
-      - '**'
-      - '!main'
+      - "**"
+      - "!main"
   pull_request:
     branches:
-      - '**'
-      - '!main'
+      - "**"
+      - "!main"
 
 jobs:
   test:
@@ -22,4 +22,6 @@ jobs:
           node-version: lts/*
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
       - run: pnpm test
+        if: (${{ success() }} || ${{ failure() }}) # ensures this step runs even if previous steps fail

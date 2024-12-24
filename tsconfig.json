@@ -1,12 +1,12 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "allowJs": true,
-    "checkJs": true,
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "declarationDir": "types",
-    "declarationMap": true
-  },
-  "include": ["src"]
+	"compilerOptions": {
+		"strict": true,
+		"allowJs": true,
+		"checkJs": true,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"declarationDir": "types",
+		"declarationMap": true
+	},
+	"include": ["src"]
 }

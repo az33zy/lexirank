@@ -54,6 +54,54 @@ export class AsciiPrintableCharSet {
 	}
 }
 
+/**
+ * @implements {CharacterSet}
+ */
+export class AlphanumericCharSet {
+	charSet = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+	min() {
+		return "0"
+	}
+	mid() {
+		return "U"
+	}
+	max() {
+		return "z"
+	}
+
+	/**
+	 * @param {string} prevChar
+	 * @param {string} nextChar
+	 */
+	between(prevChar, nextChar) {
+		if (prevChar === nextChar) return null
+
+		const prevCharIndex = this.charSet.indexOf(prevChar)
+		const nextCharIndex = this.charSet.indexOf(nextChar)
+
+		if (prevCharIndex === nextCharIndex - 1) return null
+
+		const midCharIndex =
+			prevCharIndex + Math.floor((nextCharIndex - prevCharIndex) / 2)
+
+		const midChar = this.charSet[midCharIndex]
+
+		return midChar
+	}
+
+	/**
+	 * @param {string} str
+	 */
+	isValid(str) {
+		for (let i = 0; i < str.length; i++) {
+			if (this.charSet.indexOf(str[i]) === -1) {
+				return false
+			}
+		}
+		return true
+	}
+}
+
 export class LexiRank {
 	charSet
 
@@ -122,16 +170,16 @@ export class LexiRank {
 			throw new LexiRankInputError(`prev and next can't be an empty string`)
 		}
 
-		if (prev >= next) {
-			throw new LexiRankInputError(`prev should be smaller than next`)
-		}
-
 		if (!this.charSet.isValid(prev)) {
 			throw new LexiRankInputError(`prev contains invalid characters`)
 		}
 
 		if (!this.charSet.isValid(next)) {
 			throw new LexiRankInputError(`next contains invalid characters`)
+		}
+
+		if (prev >= next) {
+			throw new LexiRankInputError(`prev should be smaller than next`)
 		}
 	}
 }

@@ -48,5 +48,6 @@
     "ordered lists",
     "sorting"
   ],
-  "sideEffects": false
+  "sideEffects": false,
+  "packageManager": "pnpm@9.15.1"
 }
